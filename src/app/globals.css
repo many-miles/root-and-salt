@@ -1,26 +1,95 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "../styles/brand.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", "Raleway", Arial, sans-serif;
+  --font-script: "Snell Roundhand", "Brush Script MT", cursive;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #f7f4ef;
+  color: #2f2f2f;
+  font-family: var(--font-sans);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: #7a8a72;
+  color: #f7f4ef;
+}
+
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.editorial {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.script {
+  font-family: var(--font-script);
+}
+
+.image-treatment {
+  filter: saturate(0.82) sepia(0.08) contrast(0.96);
+}
+
+.grain {
+  position: relative;
+}
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image: radial-gradient(rgba(47, 47, 47, 0.18) 0.5px, transparent 0.5px);
+  background-size: 5px 5px;
+  mix-blend-mode: multiply;
+}
+
+.prose-soft p {
+  margin-block: 1rem;
+  line-height: 1.85;
+  color: rgba(47, 47, 47, 0.78);
+}
+
+.prose-soft h2 {
+  margin-top: 2.5rem;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 500;
+}
+
+.lock-grid {
+  background-image:
+    linear-gradient(rgba(184, 182, 176, 0.24) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 182, 176, 0.24) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
