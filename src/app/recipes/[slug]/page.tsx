@@ -18,7 +18,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const recipe = recipes.find((item) => item.slug === slug);
-  return { title: `${recipe?.title ?? "Recipe"} | Root & Salt`, description: recipe?.description };
+  return {
+    title: `${recipe?.title ?? "Recipe"} | Root & Salt`,
+    description: recipe?.description,
+  };
 }
 
 export default async function RecipePage({ params }: Props) {
@@ -26,7 +29,9 @@ export default async function RecipePage({ params }: Props) {
   const recipe = recipes.find((item) => item.slug === slug);
   if (!recipe) notFound();
 
-  const related = recipes.filter((item) => recipe.relatedRecipeIds.includes(item.id));
+  const related = recipes.filter((item) =>
+    recipe.relatedRecipeIds.includes(item.id),
+  );
   const recipeSchema = {
     "@context": "https://schema.org",
     "@type": "Recipe",
@@ -35,12 +40,15 @@ export default async function RecipePage({ params }: Props) {
     image: recipe.image,
     recipeYield: recipe.servings,
     recipeIngredient: recipe.ingredients,
-    recipeInstructions: recipe.steps
+    recipeInstructions: recipe.steps,
   };
 
   return (
     <div className="container">
-      <script dangerouslySetInnerHTML={{ __html: JSON.stringify(recipeSchema) }} type="application/ld+json" />
+      <script
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(recipeSchema) }}
+        type="application/ld+json"
+      />
       <RecipeHero recipe={recipe} />
       {recipe.isPremium && <PremiumLock />}
       <div className="grid gap-10 py-12 lg:grid-cols-[0.7fr_1fr]">
@@ -52,8 +60,12 @@ export default async function RecipePage({ params }: Props) {
             <h2 className="editorial text-3xl">Notes from Chanél</h2>
             <p className="mt-3 leading-7 text-charcoal/70">{recipe.notes}</p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button type="button" variant="secondary">Save recipe</Button>
-              <Button type="button" variant="secondary">Download PDF</Button>
+              <Button type="button" variant="secondary">
+                Save recipe
+              </Button>
+              <Button type="button" variant="secondary">
+                Download PDF
+              </Button>
             </div>
           </div>
         </div>

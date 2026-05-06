@@ -9,6 +9,7 @@ export const supabase =
     : null;
 
 export const authPlaceholder = {
-  signInMessage: "Supabase auth is ready to connect with email, magic link, or OAuth providers.",
-  requiredEnv: ["NEXT_PUBLIC_SUPABASE_URL", "NEXT_PUBLIC_SUPABASE_ANON_KEY"]
+  signInMessage:
+    "Supabase auth is ready to connect with email, magic link, or OAuth providers.",
+  requiredEnv: ["NEXT_PUBLIC_SUPABASE_URL", "NEXT_PUBLIC_SUPABASE_ANON_KEY"],
 };

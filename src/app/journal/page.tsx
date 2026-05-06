@@ -6,7 +6,8 @@ import { blogPosts } from "@/data/blogPosts";
 
 export const metadata: Metadata = {
   title: "Journal | Root & Salt",
-  description: "Food stories, coastal living, hosting, slow living, and kitchen notes."
+  description:
+    "Food stories, coastal living, hosting, slow living, and kitchen notes.",
 };
 
 export default function JournalPage() {
@@ -15,10 +16,16 @@ export default function JournalPage() {
   return (
     <>
       <section className="container py-16">
-        <p className="text-xs uppercase tracking-[0.18em] text-olive">Food stories and coastal living</p>
+        <p className="text-xs uppercase tracking-[0.18em] text-olive">
+          Food stories and coastal living
+        </p>
         <h1 className="editorial mt-4 text-6xl md:text-7xl">Journal</h1>
-        <div className="mt-10"><FeaturedArticle post={featured} /></div>
-        <div className="mt-12"><BlogGrid posts={blogPosts} /></div>
+        <div className="mt-10">
+          <FeaturedArticle post={featured} />
+        </div>
+        <div className="mt-12">
+          <BlogGrid posts={blogPosts} />
+        </div>
       </section>
       <NewsletterBanner />
     </>

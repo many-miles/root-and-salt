@@ -18,14 +18,15 @@
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.4",
     "@types/node": "^22.9.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.5.0",
     "eslint": "^9.14.0",
-    "eslint-config-next": "^15.0.3",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.15",
-    "typescript": "^5.6.3"
+    "eslint-config-next": "^16.2.4",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^4.2.4",
+    "typescript": "^5"
   }
 }

@@ -7,7 +7,7 @@ const links = [
   ["Recipes", "/recipes"],
   ["Journal", "/journal"],
   ["Videos", "/videos"],
-  ["About", "/about"]
+  ["About", "/about"],
 ];
 
 export function Header() {
@@ -17,7 +17,11 @@ export function Header() {
         <Logo />
         <nav className="hidden items-center gap-7 text-sm font-medium text-charcoal/75 md:flex">
           {links.map(([label, href]) => (
-            <Link className="transition hover:text-olive" href={href} key={href}>
+            <Link
+              className="transition hover:text-olive"
+              href={href}
+              key={href}
+            >
               {label}
             </Link>
           ))}

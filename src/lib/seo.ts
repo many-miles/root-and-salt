@@ -8,7 +8,7 @@ export function pageMetadata(title: string, description: string): Metadata {
       title,
       description,
       siteName: "Root & Salt",
-      type: "website"
-    }
+      type: "website",
+    },
   };
 }

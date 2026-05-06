@@ -14,7 +14,8 @@ export function RecipeVideo({ recipe }: { recipe: Recipe }) {
         />
       </div>
       <p className="mt-3 text-xs uppercase tracking-[0.16em] text-warm/65">
-        {recipe.videoProvider} embed placeholder · supports public, private, or unlisted videos
+        {recipe.videoProvider} embed placeholder · supports public, private, or
+        unlisted videos
       </p>
     </section>
   );

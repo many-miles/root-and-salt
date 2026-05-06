@@ -1,6 +1,11 @@
 import type { VideoProvider } from "./recipe";
 
-export type VideoCategory = "Cook with me" | "Recipe videos" | "Hosting" | "Kitchen basics" | "Seasonal meals";
+export type VideoCategory =
+  | "Cook with me"
+  | "Recipe videos"
+  | "Hosting"
+  | "Kitchen basics"
+  | "Seasonal meals";
 
 export type Video = {
   id: string;

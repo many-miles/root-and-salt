@@ -11,7 +11,7 @@ export default function AboutPage() {
   return (
     <section className="container py-16">
       <div className="grid gap-10 md:grid-cols-[0.9fr_1fr] md:items-center">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
+        <div className="relative aspect-4/5 overflow-hidden rounded-lg">
           <Image alt="" className="image-treatment object-cover" fill src="/images/lifestyle/chanel-kitchen.svg" />
         </div>
         <div>

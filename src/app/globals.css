@@ -1,13 +1,44 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss" source("../");
 
-@import "../styles/brand.css";
+@theme {
+  --color-warm: #f7f4ef;
+  --color-sand: #e8ded2;
+  --color-olive: #7a8a72;
+  --color-charcoal: #2f2f2f;
+  --color-salt: #b8b6b0;
+
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", "Raleway", Arial, sans-serif;
+  --font-script: "Snell Roundhand", "Brush Script MT", cursive;
+
+  --shadow-soft: 0 22px 70px rgba(47, 47, 47, 0.08);
+}
 
 :root {
   --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
   --font-sans: "Inter", "Raleway", Arial, sans-serif;
   --font-script: "Snell Roundhand", "Brush Script MT", cursive;
+}
+
+.brand-wave {
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='16' viewBox='0 0 120 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 8C10 0 20 0 30 8C40 16 50 16 60 8C70 0 80 0 90 8C100 16 110 16 120 8' stroke='%237A8A72' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 120px 16px;
+}
+
+.soft-ring {
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(122, 138, 114, 0.16),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(232, 222, 210, 0.6),
+      transparent 34%
+    ),
+    #f7f4ef;
 }
 
 * {
@@ -69,7 +100,10 @@ img {
   inset: 0;
   pointer-events: none;
   opacity: 0.12;
-  background-image: radial-gradient(rgba(47, 47, 47, 0.18) 0.5px, transparent 0.5px);
+  background-image: radial-gradient(
+    rgba(47, 47, 47, 0.18) 0.5px,
+    transparent 0.5px
+  );
   background-size: 5px 5px;
   mix-blend-mode: multiply;
 }

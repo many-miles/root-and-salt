@@ -12,9 +12,13 @@ export default function AccountPage() {
       <MemberDownloads />
       <section>
         <h2 className="editorial text-4xl">Continue watching</h2>
-        <div className="mt-6"><VideoGrid videos={videos.slice(0, 3)} /></div>
+        <div className="mt-6">
+          <VideoGrid videos={videos.slice(0, 3)} />
+        </div>
       </section>
-      <button className="w-fit rounded-full border border-charcoal/20 px-5 py-3 text-sm">Logout placeholder</button>
+      <button className="w-fit rounded-full border border-charcoal/20 px-5 py-3 text-sm">
+        Logout placeholder
+      </button>
     </section>
   );
 }
